@@ -1,0 +1,24 @@
+{
+  "name": "url_shortner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coding-enthu/URL-Shortner.git"
+  },
+  "author": "Sayak Bhattacharyya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coding-enthu/URL-Shortner/issues"
+  },
+  "homepage": "https://github.com/Coding-enthu/URL-Shortner#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-async-errors": "^3.1.1",
+    "mongoose": "^8.14.1"
+  }
+}
