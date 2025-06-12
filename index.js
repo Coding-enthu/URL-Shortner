@@ -1,15 +1,30 @@
 const express = require("express");
+const path = require("path");
 
 const {connectDB} = require("./connection.js");
 const urlRoute= require("./routes/url.route.js");
+const staticRoute = require("./routes/static.route.js");
 const Url = require("./models/url.model.js");
 
 const app = express();
 const PORT = 8001;
 
+
+app.set("viewengine", "ejs");
+app.set("views", path.resolve("./views"));
+
 app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
+app.use("/", staticRoute);
 
+app.get("/test", async (req, res)=>{
+    const allURL = await Url.find();
+    //console.log(allURL);
+    return res.render("home.ejs", {
+        urls: allURL
+    });
+});
 
 app.use("/url", urlRoute);
 
