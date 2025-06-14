@@ -22,7 +22,8 @@ const createShortId = async (req, res) => {
     const url = await Url.create({
         shortId: id,
         redirectURL: body.url,
-        visitCount: []
+        visitCount: [],
+        createdBy: req.user._id
     })
 
     return res.status(201).render("home.ejs", {id: id});
